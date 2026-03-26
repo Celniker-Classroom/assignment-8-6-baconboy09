@@ -1,15 +1,37 @@
 // ----- Functions to implement -----
-
+let c = 0;
 // 1) myFunc(): persistent counter
+function myFunc() {
+  c += 1
+  return c
+}
 
 // 2) getRandomNum(max): 1..max int or 0 if invalid
-
+function getRandomNum(max){
+  if (!isNaN(max)){
+    a = Math.floor(Math.random()*max)+1
+  } else {
+    a = 0
+  }
+  return a
+}
 // 3) myAdder(x, y): numeric sum
-
+function myAdder(x,y){
+  return parseInt(x)+parseInt(y)
+}
 // 4) distance(x1, y1, x2, y2): Euclidean distance
+function distance(x1,y1,x2,y2){
+  return Math.sqrt(((x2-x1)**2)+((y2-y1)**2))
+}
 
 // 5) quadratic(a, b, c): roots of ax^2 + bx + c = 0
-
+function quadratic(a, b, c) {
+  const [vA, vB, vC] = [Number(a), Number(b), Number(c)];
+  const disc = vB * vB - 4 * vA * vC;
+  if (disc < 0) return "No real roots";
+  const s = Math.sqrt(disc);
+  return [(-vB + s) / (2 * vA), (-vB - s) / (2 * vA)];
+}
 
 // ----- Helpers -----
 function $(id) { return document.getElementById(id); }
