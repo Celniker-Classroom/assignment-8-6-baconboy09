@@ -8,7 +8,7 @@ function myFunc() {
 
 // 2) getRandomNum(max): 1..max int or 0 if invalid
 function getRandomNum(max){
-  if (!isNaN(max)){
+  if (!isNaN(max)&&max>0){
     a = Math.floor(Math.random()*max)+1
   } else {
     a = 0
@@ -28,7 +28,7 @@ function distance(x1,y1,x2,y2){
 function quadratic(a, b, c) {
   const [vA, vB, vC] = [Number(a), Number(b), Number(c)];
   const disc = vB * vB - 4 * vA * vC;
-  if (disc < 0) return "No real roots";
+  if (disc < 0) return "imaginary";
   const s = Math.sqrt(disc);
   return [(-vB + s) / (2 * vA), (-vB - s) / (2 * vA)];
 }
